@@ -78,7 +78,7 @@ class Geocoder(Service):
 
         return resp
 
-    def reverse(self, lon, lat, types=None, limit=None):
+    def reverse(self, lon, lat, types=None, limit=None, languages=None):
         """Returns a Requests response object that contains a GeoJSON
         collection of places near the given longitude and latitude.
 
@@ -95,7 +95,8 @@ class Geocoder(Service):
         if types:
             types = list(types)
             params.update(self._validate_place_types(types))
-
+        if languages:
+            params.update(language=','.join(languages))
         if limit is not None:
             if not types or len(types) != 1:
                 raise InvalidPlaceTypeError(
