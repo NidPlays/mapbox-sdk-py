@@ -1,6 +1,10 @@
 Changes
 =======
 
+0.18.2 (2023-10-12)
+-------------------
+- Add languages option to reverse geocoder
+
 0.18.1 (2022-08-01)
 -------------------
 - Drop python 2 from travis build (#275)
